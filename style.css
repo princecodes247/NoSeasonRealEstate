@@ -170,7 +170,7 @@ select, input {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background: #333 url("./house.jpg") no-repeat;
+	background: url("./house.jpg") no-repeat;
 	background-blend-mode: multiply;
 
 	background-size: cover;
@@ -497,7 +497,34 @@ text-shadow: none;
 }
 .property_controls {
 	flex: 1;
-	background: #999;
+	/*background: #999;*/
+}
+.property_controls ul {
+	display: flex;
+	flex-direction: column;
+	grid-gap: 1px;
+}
+.property_controls li img {
+	margin: 0;
+	/*border: 1px solid red;*/
+}
+.property_controls li {
+	list-style: none;
+	transition: filter 400ms;
+	filter: grayscale(60%);
+	margin: 0;
+	padding: 0;
+	padding: 10px;
+	padding-bottom: 0;
+}
+.property_controls li.active {
+	padding: 5px;
+	padding-bottom: 0;
+	border: 4px solid var(--primary-color);
+	filter: grayscale(0%);
+}
+.property_controls li:hover {
+	filter: grayscale(30%);
 }
 .property {
 	position: relative;
@@ -566,6 +593,31 @@ text-shadow: none;
 
 }
 
+.paginator {
+	display: flex;
+	justify-content: center;
+	/*background: #000;*/
+	align-items: center;
+	margin-bottom: 20px;
+}
+.paginator .number_set{
+	display: flex;
+	grid-gap: 10px;
+	font-size: 0.9em;
+	margin: 0px 10px;
+	align-items: center;
+}
+
+.paginator .number_set .number{
+	font-size: 1.3em;
+}
+
+.paginator .number_set .number.active{
+	font-size: 2em;
+	font-weight: bold;
+	color: var(--primary-color);
+}
+
 /*TODO: MAKE THIS WORK ONLY ON PROPERTIES PAGE*/
 .showcase.properties h2 {
 	margin-bottom: 2em;
@@ -629,6 +681,11 @@ text-shadow: none;
 
 .stat h3 {
 	animation: scale-easeOutElastic 1s forwards ;
+}
+
+.dashboard {
+	display: flex;
+	background: #0002;
 }
 
 @keyframes scale-easeOutElastic {
@@ -791,6 +848,9 @@ text-shadow: none;
 
 		.property_sect .property_controls{
 			display: none;
+	}
+	.dashboard {
+		
 	}
 	footer {
 		justify-content: center;

@@ -255,29 +255,5 @@
 	<script src="three.js"></script>
 <script src="TweenMax.min.js"></script>
 
-<script src="hover.umd.js"></script>
-<script src="fader.js"></script>
-<script>
-    var myAnimation = new hoverEffect({
-        parent: document.querySelector('.hero_backdrop'),
-        intensity: 0.1,
-        image1: 'house.jpg',
-        image2: 'house2.jpg',
-        displacementImage: 'bg.png'
-    });
-    document.querySelector('.hero_backdrop').classList.remove("hero_backdrop--clear")
-    let last = false
-    setInterval(()=> {
-    	fader(".hero_text")
-    	if (last) {
-    		myAnimation.previous()
-
-    	} else {
-
-    	myAnimation.next()
-    	}
-    		last = !last
-    }, 6000)
-</script>
 </body>
 </html>
